@@ -1,0 +1,17 @@
+
+
+services:
+  db:
+    image: mysql
+    container_name: campus-complaints-db
+    restart: always
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_DATABASE: campus_complaints
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+volumes:
+  mysql_data:
